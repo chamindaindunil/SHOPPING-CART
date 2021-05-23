@@ -5,17 +5,24 @@
         </div>
     </div>
 </div>
-<div class="row row-cols-1 row-cols-md-3">
+<div class="row row-cols-1 row-cols-md-2 g-4">
     {{# each products }}
     <div class="col mb-4">
-        <div class="card">
-            <img src="{{ this.imagePath }}" class="card-img-top" alt="..." class="img-responsive">
-            <div class="card-body">
-                <h5 class="card-title">{{ this.title}}</h5>
-                <p class="card-text">{{ this.description}}</p>
-                <div class="clearfix">
-                    <div class="price float-start">Rs: {{ this.price}}</div>
-                    <a href="/add-to-cart/{{this._id}}" class="btn btn-success float-end" role="button">Add to Cart</a>
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ this.imagePath }}" alt="..." class="img-responsive">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ this.title}}</h5>
+                        <p class="card-text">{{ this.description}}</p>
+                        <div class="clearfix">
+                            <div class="price float-start">Rs: {{ this.price}}</div>
+                            <a href="/add-to-cart/{{this._id}}" class="btn btn-success float-end" role="button">Add to
+                                Cart</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
