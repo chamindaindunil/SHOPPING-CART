@@ -5,22 +5,20 @@
         </div>
     </div>
 </div>
-    <div class="row row-cols-1 row-cols-md-3">
-        {{# each products }}
-            <div class="col mb-4">
-                <div class="card">
-                    <img src="{{ this.imagePath }}" class="card-img-top" alt="..." class="img-responsive">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ this.title}}</h5>
-                        <p class="card-text">{{ this.description}}</p>
-                        <div class="clearfix">
-                            <div class="price float-start">Rs: {{ this.price}}</div>
-                            <a href="/add-to-cart/{{this._id}}" class="btn btn-success float-end" role="button">Add to Cart</a>
-                        </div>
-                    </div>
+<div class="row row-cols-1 row-cols-md-3">
+    {{# each products }}
+    <div class="col mb-4">
+        <div class="card">
+            <img src="{{ this.imagePath }}" class="card-img-top" alt="..." class="img-responsive">
+            <div class="card-body">
+                <h5 class="card-title">{{ this.title}}</h5>
+                <p class="card-text">{{ this.description}}</p>
+                <div class="clearfix">
+                    <div class="price float-start">Rs: {{ this.price}}</div>
+                    <a href="/add-to-cart/{{this._id}}" class="btn btn-success float-end" role="button">Add to Cart</a>
                 </div>
             </div>
-        {{/each}}
+        </div>
     </div>
-
-
+    {{/each}}
+</div>
