@@ -14,10 +14,10 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/shopping-cart/">
-            <i class="fas fa-cart-arrow-down"></i> Shopping Cart
+            <i class="fas fa-cart-arrow-down"></i> Cart
             <span class="badge bg-secondary">{{session.cart.totalQty}}</span>
           </a>
         </li>
@@ -33,11 +33,15 @@
           </ul>
         </li>
         {{ else }}
-        <li class="nav-item">
-          <a class="nav-link active" href="/user/signup"><i class="fas fa-user"></i> Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="/user/signin"><i class="fas fa-user"></i> Sign In</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="fas fa-user"></i> Login
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="/user/signup">Register</a></li>
+            <li><a class="dropdown-item" href="/user/signin">Sign In</a></li>
+          </ul>
         </li>
         {{/if}}
       </ul>
