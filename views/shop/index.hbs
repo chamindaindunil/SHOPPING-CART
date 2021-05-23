@@ -5,10 +5,9 @@
         </div>
     </div>
 </div>
-{{# each products }}
-    <div class="row">
-        {{# each this}}
-            <div class="col">
+    <div class="row row-cols-1 row-cols-md-3">
+        {{# each products }}
+            <div class="col mb-4">
                 <div class="card">
                     <img src="{{ this.imagePath }}" class="card-img-top" alt="..." class="img-responsive">
                     <div class="card-body">
@@ -23,5 +22,5 @@
             </div>
         {{/each}}
     </div>
-    <br>
-{{/each}}
+
+
