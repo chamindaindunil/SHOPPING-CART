@@ -6,6 +6,8 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
