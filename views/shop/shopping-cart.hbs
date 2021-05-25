@@ -1,4 +1,49 @@
 {{# if products }}
+<table class="table table-bordered align-middle">
+    <thead class="table-light">
+        <tr>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col">PRODUCT</th>
+            <th scope="col">PRICE</th>
+            <th scope="col">QUANTITY</th>
+            <th scope="col">TOTAL</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{# each products}}
+        <tr>
+            <th scope="row"><a href="/remove/{{this.item._id}}" class="btn btn-critical float-end" role="button"><i
+                        class="fas fa-trash-alt"></i></a></th>
+            <td>
+                <img src="{{ this.item.imagePath }}" alt="..." class="img-thumbnail" style="height: 100px;">
+            </td>
+            <td>{{ this.item.title}}</td>
+            <td>{{ this.item.price}}</td>
+            <td>{{ this.qty }}</td>
+            <td><strong class="float-end">{{ this.price}}</strong></td>
+        </tr>
+        {{/each}}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5"><strong class="float-end">Total:</strong></td>
+            <td><strong class="float-end">{{ totalPrice }}</strong></td>
+        </tr>
+    </tfoot>
+</table>
+<div class="row">
+    <div>
+        <a href="/checkout" type="button" class="btn btn-success float-end">Checkout</a>
+    </div>
+</div>
+{{ else }}
+<div class="row">
+    <div class="text-center">
+        <h2>No Items in Cart</h2>
+    </div>
+</div>
+{{/if}}
 <!--<div class="row justify-content-md-center">
         <div class="col-sm-6 col-md-6">
             <ul class="list-group">
@@ -21,42 +66,3 @@
             </ul>
         </div>
     </div>-->
-<div class="row row-cols-1 row-cols-md-2 g-4">
-    {{# each products }}
-    <div class="col mb-4">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="{{ this.imagePath }}" alt="..." class="img-responsive">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ this.item.title}}</h5>
-                        <div><span class="badge bg-secondary">{{ this.qty }}</span></div>
-                        <div class="price float-start">Rs: {{ this.price}}</div>
-                        <a href="/remove/{{this.item._id}}" class="btn btn-critical float-end" role="button"><i class="fas fa-trash-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/each}}
-</div>
-<div class="row">
-    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-        <strong>Total: {{ totalPrice }}</strong>
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-        <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
-    </div>
-</div>
-{{ else }}
-<div class="row">
-    <div class="text-center">
-        <h2>No Items in Cart</h2>
-    </div>
-</div>
-{{/if}}
