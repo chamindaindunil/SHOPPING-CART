@@ -23,10 +23,10 @@
                 <td>{{ this.item.title}}</td>
                 <td>Rs. {{ this.item.price}}</td>
                 <td>
-                    <div class="btn-group col-sm-2" role="group" aria-label="Basic example">
-                        <a href="/reduce/{{this.item._id}}" type="button" class="btn btn-secondary col-sm-2">-</a>
-                        <input type="text" value="{{ this.qty }}" readonly class="form-control col-sm-2 d-inline">
-                        <button type="button" class="btn btn-secondary col-sm-2">+</button>
+                    <div class="btn-group" role="group" aria-label="Basic example" style="width: 120px;">
+                        <a href="/reduce/{{this.item._id}}" type="button" class="btn btn-secondary">-</a>
+                        <input type="text" value="{{ this.qty }}" readonly class="form-control">
+                        <a href="/add/{{this.item._id}}" type="button" class="btn btn-secondary">+</a>
                     </div>
                 </td>
                 <td><strong class="float-end">Rs. {{ this.price}}</strong></td>

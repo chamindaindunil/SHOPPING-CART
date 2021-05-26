@@ -22,7 +22,9 @@ module.exports = function Cart(oldCart) {
 
         if (this.items[id].qty <= 0) {
             delete this.items[id];
+            this.totalPrice = 0;
         }
+        console.log(this.totalPrice);
     };
 
     this.removeItem = function(id) {
