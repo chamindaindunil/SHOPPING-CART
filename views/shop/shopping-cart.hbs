@@ -5,8 +5,7 @@
         <thead class="table-light">
             <tr>
                 <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col">PRODUCT</th>
+                <th scope="col" colspan="2">PRODUCT</th>
                 <th scope="col">PRICE</th>
                 <th scope="col">QUANTITY</th>
                 <th scope="col">TOTAL</th>
@@ -21,16 +20,16 @@
                     <img src="{{ this.item.imagePath }}" alt="..." class="img-thumbnail" style="height: 100px;">
                 </td>
                 <td>{{ this.item.title}}</td>
-                <td>{{ this.item.price}}</td>
+                <td>Rs. {{ this.item.price}}</td>
                 <td>{{ this.qty }}</td>
-                <td><strong class="float-end">{{ this.price}}</strong></td>
+                <td><strong class="float-end">Rs. {{ this.price}}</strong></td>
             </tr>
             {{/each}}
         </tbody>
         <tfoot>
             <tr>
                 <td colspan="5"><strong class="float-end">Total:</strong></td>
-                <td><strong class="float-end">{{ totalPrice }}</strong></td>
+                <td><strong class="float-end">Rs. {{ totalPrice }}</strong></td>
             </tr>
         </tfoot>
     </table>

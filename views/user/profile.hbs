@@ -4,7 +4,7 @@
     <table class="table align-middle">
         <thead>
             <tr>
-                <th scope="col" colspan="2">PRODUCT</th>
+                <th scope="col">PRODUCT</th>
                 <th scope="col">PRICE</th>
                 <th scope="col">QUANTITY</th>
                 <th scope="col">TOTAL</th>
@@ -16,8 +16,9 @@
                 <td colspan="5">
                     <div class="card text-dark bg-light">
                         <div class="card-body">
-                            <div>Order ID: </div>
-                            <div>Order Amount: {{ this.totalPrice }}</div>
+                            <div class="float-start"><b>Order ID: {{ this._id }}</b></div>
+                            <div class="float-end"><b>Order Amount: Rs. {{ this.cart.totalPrice }}</b></div><br>
+                            <div class="float-start"><b>Order Status: Shipping</b></div>
                         </div>
                     </div>
                 </td>
@@ -26,11 +27,11 @@
             <tr>
                 <td>
                     <img src="{{ this.item.imagePath }}" alt="..." class="img-thumbnail" style="height: 100px;">
+                    {{ this.item.title}}
                 </td>
-                <td>{{ this.item.title}}</td>
-                <td>{{ this.item.price}}</td>
+                <td>Rs. {{ this.item.price}}</td>
                 <td>{{ this.qty }}</td>
-                <td>{{ this.price}}</td>
+                <td>Rs. {{ this.price}}</td>
             </tr>
             {{/each}}
             {{/each}}

@@ -20,7 +20,7 @@ router.get('/profile', isLoggedIn, function(req, res, next) {
       order.items = cart.generateArray();
     });
     res.render('user/profile', { orders: orders });
-  });
+  }).lean();
 });
 
 router.get('/logout', isLoggedIn, function(req, res, next) {
